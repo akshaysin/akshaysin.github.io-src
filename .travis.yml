@@ -1,0 +1,7 @@
+branches:
+  only: develop
+language: python
+python: '3.5'
+sudo: false
+script:
+- pelican -s pelicanconf.py -t themes/pelican-bootstrap3/ content/

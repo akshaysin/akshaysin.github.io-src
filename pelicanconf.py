@@ -59,6 +59,7 @@ DEFAULT_PAGINATION = 10
 
 BOOTSTRAP_FLUID=False
 BOOTSTRAP_NAVBAR_INVERSE=True
+STATIC_PATHS = [ 'docs', 'images' ]
 # BANNER='images/download.jpg'
 # BANNER_SUBTITLE=''
 PYGMENTS_STYLE='solarizeddark'
