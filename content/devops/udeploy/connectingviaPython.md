@@ -1,9 +1,9 @@
 Title: Connecting to udeploy via REST and Python
 Date: 2018-04-18 11:30 PM
 Modified: 2018-04-09 11:30 PM
-Category: udeploy
+Category: urbancode
 Tags: udeploy, python, rest
-Slug: udeploy-2
+Slug: udeploy-1
 Authors: Akshay Sinha
 Summary: Connecting to udeploy via REST and Python
 

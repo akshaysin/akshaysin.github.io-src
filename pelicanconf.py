@@ -82,7 +82,7 @@ ADDTHIS_PROFILE = 'ra-5adbce4fc80f08db'
 
 # PLUGINS = [u"disqus_static"]
 
-DISQUS_SITENAME = 'an-average-joe.disqus.com'
+DISQUS_SITENAME = 'an-average-joe'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
