@@ -82,9 +82,7 @@ ADDTHIS_PROFILE = 'ra-5adbce4fc80f08db'
 
 # PLUGINS = [u"disqus_static"]
 
-DISQUS_SITENAME = 'https-akshaysin-github-io'
-# DISQUS_SECRET_KEY = 'jLI9aGvlRANtJ5Rqy4MWQL0aaKgKKvqQ06nR26iwY3ORczKrgLvMcswHJjRm8KRD'
-# DISQUS_PUBLIC_KEY = 'KTXp0mcORVKrX0GY6PpdmFhQhSM67gxcpxA0igehWyTdwpELZnju3zsTQaDNb1pz'
+DISQUS_SITENAME = 'an-average-joe.disqus.com'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
