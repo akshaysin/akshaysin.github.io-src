@@ -13,13 +13,13 @@ Ansible is an python based, agentless, automation engine which is use to automat
 
 Since vagrant gives me the option of spinning off throw away vms on the fly, its a good fit if you are testing waters out with ansible. Enough talk, lets dive in
 
-**#### Prerequisites**
+### Prerequisites
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 * Enough resources (CPU and RAM) locally to support multiple VM's.
 
-**#### Setting up VM's**
+### Setting up VM's
 
 Create following `Vagrantfile` in your workspace :
 
@@ -76,7 +76,7 @@ You can halt and destroy all nodes by using below commands
     vagrant halt
     vagrant destroy
 
-**#### Exchange SSH keys between nodes.**
+### Exchange SSH keys between nodes.
 
 I love putty but lately I have started cheating on it with [MobaXterm](https://mobaxterm.mobatek.net/). Don't get me wrong, I still love putty, but mobaxterm is proving to quite useful in many ways over putty. Give it a try and let me know if you like it.
 
@@ -108,7 +108,7 @@ on node `node2` as user `vagrant`
 
 After this you should be able to ssh from `ansible` to `node1`, `node2` and `node3` in password less manner
 
-**####  Installing Ansible**
+###  Installing Ansible
 
 On node `ansible`
 
@@ -119,7 +119,7 @@ That's it. Ansible is installted on the host. you should be able to verify its v
 
     ansible --version
 
-**#### Using Ansible**
+### Using Ansible
 
 **/etc/ansible/hosts**
 
@@ -157,7 +157,7 @@ YAML files start with "---", so make sure you don't forget that part. Save and c
 
 If you want to specify configuration details for every server, regardless of group association, you can put those details in a file at /etc/ansible/group_vars/all. Individual hosts vars can be configured by creating files under a directory at /etc/ansible/host_vars
 
-##### Using ansible with simple commands
+#### Using ansible with simple commands
 
 Ping all of the servers you configured by typing:
 
@@ -233,6 +233,6 @@ The shell module lets us send a terminal command to the remote host and retrieve
     tmpfs                    100M     0  100M   0% /run/user/1000
 
 
-#### Conclusion
+### Conclusion
 
 This should do to get you started with ansible. Look out for my next blog to go more in depth with ansible's more advanced and useful usage.
