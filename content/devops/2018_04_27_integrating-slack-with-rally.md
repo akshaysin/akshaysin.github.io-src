@@ -15,7 +15,7 @@ This got me thinking if there was an existing integration between slack and Rall
 
 Hence I ended up writing a small python script which pulls data from rally and posts them to Slack as messages. Given below is the script and the github link of the code :
 
-[Github link](https://github.com/akshaysin/rally-to-slack/blob/master/README.md)
+[Github link](https://github.com/akshaysin/rally-to-slack)
 
     from datetime import datetime
     from datetime import timedelta
