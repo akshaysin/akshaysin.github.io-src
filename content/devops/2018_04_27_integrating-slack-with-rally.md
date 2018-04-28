@@ -11,9 +11,9 @@ Summary: Integrating Slack with Rally
 
 Being a Jira admin, I am not a great fan of Rally myself. However this client that I was working with, had all its teams using Rally. They also were using Slack as the corporate team collaboration solution.
 
-This got me thinking if there was an existing integration between slack and Rally. Not surprisingly, rally doesn't have an out of box integration with Slack and by the looks of it, it doesn't look like hey are planning to work on it either. Seems like it might have to do something with them  trying to push [Flowdeck](https://www.flowdock.com/) on its customers. [This](https://communities.ca.com/thread/241764680) thread is an interesting read if you are interested.
+This got me thinking if there was an existing integration between slack and Rally. Not surprisingly, rally doesn't have an out of box integration with Slack and by the looks of it, it doesn't look like they are planning to work on it either. Seems like it might have something to do with them trying to push [Flowdeck](https://www.flowdock.com/) as the chatting solution on its customers. I wonder why would anyone want to migrate from Slack to Flowdeck just for this. [This](https://communities.ca.com/thread/241764680) thread is an interesting read if you are interested to know more.
 
-Hence I ended up writing a s small python script which pulls data from rally and posts to Slack as messages. Given below is the script and the github link of the code :
+Hence I ended up writing a small python script which pulls data from rally and posts them to Slack as messages. Given below is the script and the github link of the code :
 
 [Github link](https://github.com/akshaysin/rally-to-slack/blob/master/README.md)
 
@@ -79,4 +79,4 @@ Hence I ended up writing a s small python script which pulls data from rally and
         slack.chat.post_message(channel=channel, text=postmessage, username="rallyslackbot", as_user=False)
     slack.chat.post_message(channel=channel, text="*EOM*", username="rallyslackbot", as_user=False)
 
-Well that's it. Have it setup in a cron watch your stories rolling into Slack.
+Well that's it. Have it setup in a cron on one of your boxes and watch your stories rolling into Slack.
