@@ -1,8 +1,8 @@
 Title: Integrating Slack with Rally
 Date: 2018-4-27 23:16
 Modified: 2018-4-27 23:16
-Category: python, slack
-Tags: python
+Category: devops
+Tags: python, slack
 Slug: integrating-slack-with-rally
 Authors: Akshay Sinha
 Summary: Integrating Slack with Rally
