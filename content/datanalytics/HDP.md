@@ -19,17 +19,17 @@ The other day, I was wondering if I can setup a single node hdp cluster on my la
 
 #### Download Vagrant
 
-Download and install Vagrant from (Vagrant official site)[https://www.vagrantup.com/downloads.html]
+Download and install Vagrant from [Vagrant official site](https://www.vagrantup.com/downloads.html)
 
 #### Download Virtual Box
 
-Download and install Virtual Box from (Virtualbox official site)[https://www.virtualbox.org/wiki/Downloads]
+Download and install Virtual Box from [Virtualbox official site](https://www.virtualbox.org/wiki/Downloads)
 
 #### Download the customized Vagrantfile and provision file from git
 
 Credit : https://github.com/timveil/hdp-vagrant-basehttps://github.com/timveil/hdp-vagrant-base
 
-Thanks to (Tim Veil)[https://github.com/timveil] for creating a customized vagrantfile file for base install box for HDP cluster tailored to
+Thanks to [Tim Veil](https://github.com/timveil) for creating a customized vagrantfile file for base install box for HDP cluster tailored to
 Hortonworks install dos. Go ahead and clone the above git repository in a local directory.
 
 I made a few changes to the above vagrant file. Overwrite the downloaded Vagrantfile with following contents. Leave the `provision-base.sh` as is :
