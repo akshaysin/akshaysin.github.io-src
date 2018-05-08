@@ -64,12 +64,14 @@ STATIC_PATHS = [ 'docs', 'images' ]
 # BANNER_SUBTITLE=''
 PYGMENTS_STYLE='solarizeddark'
 DISPLAY_ARTICLE_INFO_ON_INDEX=True
-ABOUT_ME='A confused coder'
+ABOUT_ME='A confused coder.'
 AVATAR='images/akshay.jpg'
 DISPLAY_CATEGORIES_ON_SIDEBAR=False
 DISPLAY_ARCHIVE_ON_SIDEBAR=True
 MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 SHARIFF = False
+GOOGLE_ANALYTICS_UNIVERSAL = 'UA-118879797-1'  # use your own tracking ID here
+GOOGLE_ANALYTICS_UNIVERSAL_PROPERTY = 'auto'
 
 '''add following to the end of index.html to enable addThis analytics
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
