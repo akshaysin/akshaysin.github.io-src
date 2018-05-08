@@ -8,6 +8,7 @@ script:
 after_success: |
   if [ -n "$GITHUB_TOKEN" ]; then
     cd "$TRAVIS_BUILD_DIR"
+    cp content/google8888ce2e36a2aff4.html output
     cd output
     git init
     git checkout -b master
