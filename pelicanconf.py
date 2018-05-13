@@ -43,7 +43,10 @@ JINJA_ENVIRONMENT = {
 }
 
 # Blogroll
-LINKS = (('Resume', 'docs/Resume.pdf'),
+# LINKS = (('Resume', 'docs/Resume.pdf'),
+#          ('Email','https://spamty.eu/mail/v4/830/2RWUyWci8Q2f55cff1/'))
+
+LINKS = (('Resume', 'https://uptowork.com/mycv/akshaysinha'),
          ('Email','https://spamty.eu/mail/v4/830/2RWUyWci8Q2f55cff1/'))
 
 # Social widget
