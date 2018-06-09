@@ -1,7 +1,7 @@
 Title: Kafka Messaging Infrastructure installation using HDF
 Date: 2018-04-11 10:00 PM
 Modified: 2018-04-11 10:00 PM
-Category: Devops
+Category: Various
 Tags: kafka, zookeeper, installation
 Slug: hdf-kafka
 Authors: Akshay Sinha
@@ -83,3 +83,9 @@ If all goes well, at this time, you should be able to get to access ambari over 
       |kafka-node3	 |  ZooKeeper Server,Kafka Broker|
 
   * Review and confirm
+
+### Security
+Kafka ships with an out of box authorizer. What that means is that it gives you the ability to setup acls across topics and restrict them to the users you like. I have found client cert mutual authentication coupled with this acl approach to be very effective. Please refer to folowing two bolgs for more details :
+
+  * [Setting up Client cert mutual authentication in a kafka hdf cluster]({filename}/kafka/2018_06_09_kafka_ssl.md)
+  * [Authorization setup in Ambari Kafka based on ACLs]({filename}/kafka/2018_06_09_kafka_acls.md)

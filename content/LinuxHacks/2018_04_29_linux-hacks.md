@@ -15,9 +15,7 @@ Here is a goto list of linux hacks that I find useful in my day to day. I will k
 
 Following two scripts generate a random string, a sub set of which, or the whole string can be used as an password. Give it a try.
 
-```date +%s | sha256sum | base64 | head -c 32 ; echo
-< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32};echo;
-```
+    date +%s | sha256sum | base64 | head -c 32 ; echo
 
 ### Removing trailing spaces
 
