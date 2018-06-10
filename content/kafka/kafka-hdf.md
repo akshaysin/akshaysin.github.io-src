@@ -7,7 +7,7 @@ Slug: hdf-kafka
 Authors: Akshay Sinha
 Summary: Kafka Messaging Infrastructure installation using HDF
 
-## Kafka Messaging Infrastructure installation using HDF
+## Kafka Messaging Infrastructure installation using HDF.
 
 Although kafka/zookeeper can of course be installed as an standalone service, I have found leveraging hortonworks hdf, a more tailored approach of setting it up. HDF already comes with a set of tools in addition to kafka and zookeeper, which can be utilized to extend the features of cluster in future if needed.
 
