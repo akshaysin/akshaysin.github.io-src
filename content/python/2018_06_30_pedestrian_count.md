@@ -1,8 +1,8 @@
 Title: A simple python script to detect pedestrians in an image using python's opencv
 Date: 2018-6-30 21:38
 Modified: 2018-6-30 21:38
-Category: Image Recognition, Python
-Tags: Python
+Category: Python
+Tags: Python, Image Recognition
 Slug: pedes
 Authors: Akshay Sinha
 Summary: A simple python script to detect pedestrians in an image using python's opencv
