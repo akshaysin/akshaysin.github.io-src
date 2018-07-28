@@ -1,7 +1,7 @@
 Title: Automated creation of application in udeploy using Python and REST
 Date: 2018-04-09 11:30 PM
 Modified: 2018-04-15 11:30 PM
-Category: urbancode, Python
+Category: Python
 Tags: udeploy, python, rest, application
 Slug: udeploy-3
 Authors: Akshay Sinha

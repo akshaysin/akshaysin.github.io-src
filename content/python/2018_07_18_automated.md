@@ -33,4 +33,6 @@ None of the above applied to us. We had :
 
 We eneded up opening a ticket with loopback cloudant connector support group to suppress this `all_fields` behaviour on their end. And they did. [Here](https://github.com/strongloop/loopback-connector-cloudant/issues/162) is the link to that discussion.
 
-On our end, we decided to only create custom indexes for the fields that were indeed needed by application at run time. Now I am talking about some 50 databases, on average 4 index documents per database, spread across 14 cloudant instances. Moreover since each each enviornment was in a different stage of development, they might have different versions of the index document in each env. Logistically deploying and maintaining this manually would have been an nightmare. 
+On our end, we decided to only create custom indexes for the fields that were indeed needed by a service at run time. Now I am talking about some 50 databases, on average 4 index documents per database, some 30 microservices, spread across 14 cloudant instances. Moreover since each enviornment was in a different stage of development ay any given time, they might have different versions of the same index document in each env. Logistically deploying and maintaining this manually would have been an nightmare.
+
+Hence we ended up writing a python script to release manage the versions of index documents for each service. 

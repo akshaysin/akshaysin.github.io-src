@@ -1,7 +1,7 @@
 Title: A simple python script to detect and count faces in an image using python's opencv
 Date: 2018-7-18 20:15
 Modified: 2018-7-18 20:15
-Category: Python, Data Analytics
+Category: Data Analytics
 Tags: Python, Image Recognition
 Slug: facerecog
 Authors: Akshay Sinha
