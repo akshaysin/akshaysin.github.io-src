@@ -44,6 +44,10 @@ So if you did too are runing a hdf instace for kafka, your kafka bin directory w
 
 Note that this also works as a neat little trick if you wanna purge a topic's data. Just set the retention to a mower value and once the data is gone, reset it back to desired value.
 
+For example, If you need to delete all messages in topic, you can exploit the retention times. First set the retention time to something very low (1000 ms), wait a few seconds, then revert the retention times back to the previous value.
+
+Note: The default retention time is 24 hours (86400000 millis).
+
 #### Deleting a topic
 
 First add following line to server.properties in `conf` folder. Its right along side `bin`
