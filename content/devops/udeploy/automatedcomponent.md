@@ -1,7 +1,7 @@
 Title: Automated creation of components in udeploy using Python and REST
 Date: 2018-04-09 11:30 PM
 Modified: 2018-04-11 11:30 PM
-Category: urbancode
+Category: urbancode, Python
 Tags: udeploy, python, rest, components
 Slug: udeploy-2
 Authors: Akshay Sinha
