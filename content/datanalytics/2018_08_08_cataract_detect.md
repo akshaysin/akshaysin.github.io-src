@@ -52,6 +52,7 @@ Lets get started now. First create four folders `neg`, `info`, `input_path_neg` 
 * Resize's input images to 128 * 128 * 3  
 
 
+
     def resize_img(im):
         resized_img = cv.resize(im, (128, 128))
         return resized_img
