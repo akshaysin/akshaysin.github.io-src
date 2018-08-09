@@ -27,7 +27,7 @@ With this in mind there were two ways I could have approached this problem,
 I tried both :). This first blog is gonna describe in detail the openCV approach and next blog will go over the Kera's approach. I am also releasing the source code with the hope that someone can take the good work further.
 
 
-[Blog Part 2 using CNN Models in Keras]()
+[Automated Cataract detection - Part 2 using CNN Models in Keras]()
 
 ### Pre-requisites :
 
@@ -51,6 +51,7 @@ Lets get started now. First create four folders `neg`, `info`, `input_path_neg` 
 * Creates 1400 Samples each for negative and positive samples and puts them in `input_path_neg` and `input_path_info` folders.
 * Resize's input images to 128 * 128 * 3  
 
+Here is the relevant part of the code :
 
 
         def resize_img(im):
