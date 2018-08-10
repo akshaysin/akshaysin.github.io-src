@@ -5,6 +5,7 @@ Category: Contact Us
 Slug: contact_us
 Authors: Akshay Sinha
 Summary: contact_us
+status: draft
 
 ### Contact Us :
 

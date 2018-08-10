@@ -184,35 +184,34 @@ Let me quickly go over some noteworthy parts of this model. We are using here :
 * Dropout of `.5` in three and `.25` in one layer.
 
 
-
-    model = Sequential()
-    
-    model.add(Conv2D(nb_filters, (nb_conv, nb_conv),
-                     padding="valid",
-                     activation='relu',
-                     input_shape=(img_channels, img_rows, img_col),
-                     data_format='channels_first'))
-    
-    model.add(Conv2D(nb_filters, (nb_conv, nb_conv), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
-    model.add(Dropout(0.50))
-    
-    model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
-    model.add(Dropout(0.25))
-    
-    model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
-    model.add(Dropout(0.50))
-    
-    model.add(Flatten())
-    model.add(Dense(128, activation='relu'))
-    model.add(Dropout(0.5))
-    model.add(Dense(nb_classes, activation='softmax'))
-    
-    model.compile(loss='categorical_crossentropy',
-                  optimizer='adam',
-                  metrics=['accuracy'])
+        model = Sequential()
+        
+        model.add(Conv2D(nb_filters, (nb_conv, nb_conv),
+                         padding="valid",
+                         activation='relu',
+                         input_shape=(img_channels, img_rows, img_col),
+                         data_format='channels_first'))
+        
+        model.add(Conv2D(nb_filters, (nb_conv, nb_conv), activation='relu'))
+        model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
+        model.add(Dropout(0.50))
+        
+        model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), activation='relu'))
+        model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
+        model.add(Dropout(0.25))
+        
+        model.add(Convolution2D(nb_filters, (nb_conv, nb_conv), activation='relu'))
+        model.add(MaxPooling2D(pool_size=(nb_pool, nb_pool)))
+        model.add(Dropout(0.50))
+        
+        model.add(Flatten())
+        model.add(Dense(128, activation='relu'))
+        model.add(Dropout(0.5))
+        model.add(Dense(nb_classes, activation='softmax'))
+        
+        model.compile(loss='categorical_crossentropy',
+                      optimizer='adam',
+                      metrics=['accuracy'])
 
 
 From here its a simple matter of training the model and plotting the accuracy and loss charts
