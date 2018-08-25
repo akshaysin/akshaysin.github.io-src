@@ -1,11 +1,11 @@
-Title: Fourier Transform on an image
+Title: Edge detection in images using Fourier Transform 
 Date: 2018-8-24 9:32
 Modified: 2018-8-24 9:32
 Category: Data Analytics
 Tags: Python, Image Processing
 Slug: fourier_transform
 Authors: Akshay Sinha
-Summary: Fourier Transform on an image
+Summary: Edge detection in images using Fourier Transform 
 
 ### Edge detection in images using Fourier Transform 
 
