@@ -6,7 +6,6 @@ Tags: Python, Image Processing
 Slug: fourier_transform
 Authors: Akshay Sinha
 Summary: Fourier Transform on an image
-status: draft
 
 ### Edge detection in images using Fourier Transform 
 
