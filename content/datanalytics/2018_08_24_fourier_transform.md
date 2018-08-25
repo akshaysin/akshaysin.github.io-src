@@ -158,7 +158,7 @@ Here is the Python code
 
 ### Credits
 
-* Special thanks to [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) at youtube. They have the best video tutorials for some of the most complicated topics. 
+* Special thanks to Grant Sanderson at [3Blue1Brown at youtube](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw). He has the best video tutorials for some of the most complicated topics in mathematics. Highly recommended.  
 * Also a great thanks to [Eugene Khutoryansky](https://www.youtube.com/channel/UCJ0yBou72Lz9fqeMXh9mkog) for his excellent video on Fourier Transform.
 
 As always, happy coding !!
