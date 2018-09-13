@@ -1,6 +1,6 @@
 Title: Edge detection in images using Fourier Transform 
 Date: 2018-8-24 9:32
-Modified: 2018-8-24 9:32
+Modified: 2018-9-13 12:02
 Category: Data Analytics
 Tags: Python, Image Processing
 Slug: fourier_transform
@@ -184,7 +184,7 @@ Here is the Python code
     plt.show()
 
 
-[Part two]() of this blog will cover the implementation and application of Low pass and Band pass filter. 
+[Part two](https://akshaysin.github.io/fourier_lpf.html#.W5oIp-hKhPY) of this blog will cover the implementation and application of Low pass and Band pass filter. 
 
 
 ### Credits
