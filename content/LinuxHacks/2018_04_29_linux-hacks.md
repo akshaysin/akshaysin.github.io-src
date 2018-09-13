@@ -68,8 +68,13 @@ Installing it is an breeze too
 Although a whole seperate blog could be ritten about tcpdump and its usage. Here is a very short, quick and dirty SOP to get it up and running
 Please note that sudo access is required for this
 
-    # Install tcpdump
+**Install tcpdump**
+
     yum install tcpdump
+    
+
+**Script to capture network traffic on a port and write a Wireshark-compatible pcap file**
+
 
     # Use tcpdump to capture network traffic and write a Wireshark-compatible pcap file:
     tcpdump -s 0 port 443 -w mypcapfile.pcap
@@ -78,3 +83,118 @@ Please note that sudo access is required for this
 
     # gzip the file:
     gzip mypcapfile.pcap
+    
+ 
+**Capture traffic on particular interface**
+
+
+    tcpdump -i eth0
+    
+    
+**Display Available Interfaces**
+
+
+    tcpdump -D
+    
+
+**Read Captured Packets File**
+
+
+    tcpdump -r mypcapfile.pcap
+    
+
+**Capture Packets from source IP**
+
+
+    tcpdump -i eth0 src 172.176.98.1
+    
+    
+**Capture Packets from destination IP**
+
+
+    tcpdump -i eth0 dst 172.176.98.1
+    
+    
+    
+### Adding a Script to auto start on reboot/startup
+
+At times, you need a way to make a script auto start at the time of reboot's ans startup. There are multiple ways to accomplish this. 
+
+However the one I find most effective is :
+
+* First create a init.d script for your operation that supports `start|stop|restart` operations. For example, here is a sample `init.d` script to start/stop ldap
+
+
+        #!/bin/sh
+        # ldap          Init script for running the ldap client daemon
+        #
+        # Author:       Akshay Sinha <akshaysin@gmail.com>
+        #
+        # chkconfig: - 63 37
+        #
+        # description: Start's Stops ldap.
+        # processname: ldap
+        # config: /opt/IBM/ldap/V6.3.1/sbin/ibmslapd
+        
+        #
+        # Below is the chkconfig syntax for auto startup at different run levels
+        # Note runlevel 1 2 and 3, 69 is the Start order and 68 is the Stop order
+        # Make sure these are unique by looking into /etc/rc.d/*
+        # Also below is the description which is necessary.
+        #
+        # chkconfig: 123 63 37
+        # description: Description of the Service
+        #
+        # Below is the source function library
+        #
+        . /etc/init.d/functions
+        #
+        #
+        # Below is the Script to start stop ldap services
+        #
+        case "$1" in
+        start)
+        printf "Starting service : LDAP\n"
+        curl --output /dev/null --silent --head --fail ldap://localhost:389
+        if [[ $? -eq 0 ]]; then
+            printf "LDAP already running. Doing nothing\n"
+        else
+            /opt/IBM/ldap/V6.3.1/sbin/ibmslapd -I isamldap
+        fi
+        ;;
+        stop)
+        printf "Stopping service : LDAP\n"
+        curl --output /dev/null --silent --head --fail ldap://localhost:389
+        if [[ $? -eq 0  ]]; then
+            /opt/IBM/ldap/V6.3.1/sbin/ibmslapd -I isamldap -k
+            printf "LDAP Stopped gracefully\n"
+        else
+            printf "LDAP Already stopped. Doing nothing\n"
+        fi
+        ;;
+        restart)
+        printf "Restarting service : LDAP\n"
+        curl --output /dev/null --silent --head --fail ldap://localhost:389
+        if [[ $? -eq 0 ]]; then
+            /opt/IBM/ldap/V6.3.1/sbin/ibmslapd -I isamldap -k
+            printf "LDAP Stopped gracefully. Starting it now\n"
+            sleep 2
+            /opt/IBM/ldap/V6.3.1/sbin/ibmslapd -I isamldap
+        else
+            printf "LDAP Already stopped. Starting it now\n"
+            /opt/IBM/ldap/V6.3.1/sbin/ibmslapd -I isamldap
+        fi
+        ;;
+        *)
+        printf "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+        esac
+ 
+* Next run the `chkconfig --list` command to list all current run levels for different programs
+* Run `chkconfig --list ldap`
+* Run `chkconfig ldap on`
+* Run `chkconfig --list ldap` again
+
+
+That's it. 

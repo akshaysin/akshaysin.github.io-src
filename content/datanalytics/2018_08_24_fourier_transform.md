@@ -83,24 +83,55 @@ In the interest of keeping this post short, I'll cover "Edge Detection" using a 
 
 Filters in image processing are just what the name suggests, Filter. They are typically a mask array of the same size as the original image which when superimposed on the ordinal image, extracts only the attributes that we are interested in.
 
-As mentioned earlier, in an FFT transformed image, low frequencies are found in the center and high frequencies are scattered around, we can create a mask array which has a circle of ones in the center and  rest all zeros. Now when this mask is applied to the original image, the resultant image would only have low frequencies. This becomes quite useful as low frequencies correspond to edges in spatial domain.
-
-Here's what a HPF looks like in python 
-
-
-    mask = np.ones((rows, cols, 2), np.uint8)
-    r = 80
-    center = [crow, ccol]
-    x, y = np.ogrid[:rows, :cols]
-    mask_area = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= r*r
-
-
+As mentioned earlier, in an FFT transformed image, low frequencies are found in the center and high frequencies are scattered around, we can then create a mask array which has a circle of zeros in the center and rest all ones. Now when this mask is applied to the original image, the resultant image would only have high frequencies. This becomes quite useful as low frequencies correspond to edges in spatial domain.
 
 Although you can choose to use filters of many types, there are mainly three types of filter used:
 
 * High Pass Filter (HPF)
 * Low Pass Filter (LPF)
 * Band Pass Filter (BPF)
+
+Here's what a HPF looks like in python - Circular HPF mask, center circle is 0, remaining all ones
+
+
+    # Circular HPF mask, center circle is 0, remaining all ones
+    rows, cols = img.shape
+    crow, ccol = int(rows / 2), int(cols / 2) 
+
+    mask = np.ones((rows, cols, 2), np.uint8)
+    r = 80
+    center = [crow, ccol]
+    x, y = np.ogrid[:rows, :cols]
+    mask_area = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= r*r
+    mask[mask_area] = 0
+
+LPF Filter - Circular LPF mask, center circle is 1, remaining all zeros
+
+    # Circular LPF mask, center circle is 1, remaining all zeros
+    rows, cols = img.shape
+    crow, ccol = int(rows / 2), int(cols / 2) 
+
+    mask = np.zeros((rows, cols, 2), np.uint8)
+    r = 100
+    center = [crow, ccol]
+    x, y = np.ogrid[:rows, :cols]
+    mask_area = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= r*r
+    mask[mask_area] = 1
+    
+Band Pass Filter - Concentric circle mask, only the points living in concentric circle are ones
+
+    rows, cols = img.shape
+    crow, ccol = int(rows / 2), int(cols / 2) 
+    
+    mask = np.zeros((rows, cols, 2), np.uint8)
+    r_out = 80
+    r_in = 10
+    center = [crow, ccol]
+    x, y = np.ogrid[:rows, :cols]
+    mask_area = np.logical_and(((x - center[0]) ** 2 + (y - center[1]) ** 2 >= r_in ** 2),
+                               ((x - center[0]) ** 2 + (y - center[1]) ** 2 <= r_out ** 2))
+    mask[mask_area] = 1
+
 
 ### Edge Detection with High Pass Filter using openCV and NumPy
 
@@ -131,6 +162,7 @@ Here is the Python code
     center = [crow, ccol]
     x, y = np.ogrid[:rows, :cols]
     mask_area = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= r*r
+    mask[mask_area] = 1
     
     # apply mask and inverse DFT
     fshift = dft_shift * mask
