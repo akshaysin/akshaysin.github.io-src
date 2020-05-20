@@ -2,7 +2,7 @@ decorator==4.2.1
 disqus-python==0.4.2
 docutils==0.14
 html5lib==1.0.1
-httplib2==0.11.3
+httplib2==0.18.0
 Jinja2==2.10
 jsonschema==2.6.0
 Markdown==2.6.11
