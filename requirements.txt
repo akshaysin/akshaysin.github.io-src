@@ -9,7 +9,7 @@ Markdown==2.6.11
 MarkupSafe==1.0
 notebook==5.4.1
 pelican==3.7.1
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 urllib3==1.22
 virtualenv==15.1.0
